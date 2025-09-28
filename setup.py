@@ -1,15 +1,37 @@
 from setuptools import setup, find_packages
+import os
+
+# Obtener la versión desde las variables de entorno o usar un valor por defecto
+version = os.getenv('APP_VERSION', '1.0.0')
+
+# Requirements básicos para deployment
+requirements = [
+    "fastapi==0.104.1",
+    "uvicorn[standard]==0.24.0",
+    "sqlalchemy==2.0.23",
+    "alembic==1.12.1",
+    "python-multipart==0.0.6",
+    "pillow==10.1.0",
+    "opencv-python==4.8.1.78",
+    "google-generativeai==0.3.2",
+    "python-dotenv==1.0.0",
+    "pydantic==2.5.0",
+    "pydantic-settings==2.1.0",
+    "python-jose[cryptography]==3.3.0",
+    "passlib[bcrypt]==1.7.4",
+    "aiofiles==23.2.1",
+    "structlog==23.2.0",
+    "python-magic==0.4.27",
+    "redis==5.0.1",
+    "aioredis==2.0.1",
+]
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
-with open("requirements.txt", "r", encoding="utf-8") as fh:
-    requirements = [line.strip() for line in fh if line.strip()
-                    and not line.startswith("#")]
-
 setup(
     name="facial-analysis-api",
-    version="1.0.0",
+    version=version,
     author="Pablo Viniegra Picazo",
     author_email="pablovpmadrid@gmail.com",
     description="API para análisis de atractivo facial usando IA",
