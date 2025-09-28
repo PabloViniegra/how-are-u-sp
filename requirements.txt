@@ -1,8 +1,8 @@
 # requirements.txt - Backend Dependencies
 
 # FastAPI Framework y servidor
-fastapi==0.104.1
-uvicorn[standard]==0.24.0
+fastapi==0.112.0
+uvicorn[standard]==0.30.0
 
 # Base de datos y ORM
 sqlalchemy==2.0.23
@@ -22,8 +22,8 @@ google-generativeai==0.3.2
 python-dotenv==1.0.0
 
 # Validación de datos
-pydantic==2.5.0
-pydantic-settings==2.1.0
+pydantic==2.8.2
+pydantic-settings==2.4.0
 
 # Utilidades adicionales
 python-jose[cryptography]==3.3.0
