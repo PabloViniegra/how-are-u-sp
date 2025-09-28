@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 import os
 
 # Obtener la versión desde las variables de entorno o usar un valor por defecto
@@ -26,8 +26,21 @@ requirements = [
     "aioredis==2.0.1",
 ]
 
-with open("README.md", "r", encoding="utf-8") as fh:
-    long_description = fh.read()
+# Definir packages manualmente para evitar problemas de importación durante build
+packages = [
+    '',
+    'services',
+    'utils',
+    'routers',
+    'middleware',
+]
+
+# Leer README.md de forma segura
+try:
+    with open("README.md", "r", encoding="utf-8") as fh:
+        long_description = fh.read()
+except:
+    long_description = "API para análisis de atractivo facial usando IA"
 
 setup(
     name="facial-analysis-api",
@@ -37,13 +50,13 @@ setup(
     description="API para análisis de atractivo facial usando IA",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    packages=find_packages(),
+    packages=packages,
+    package_dir={'': '.'},
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
-        "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
