@@ -12,8 +12,8 @@ alembic==1.12.1
 python-multipart==0.0.6
 
 # Procesamiento de imágenes
-pillow==10.1.0
-opencv-python==4.8.1.78
+Pillow>=9.0.0,<11.0.0
+opencv-python-headless==4.8.1.78
 
 # Google AI Studio
 google-generativeai==0.3.2
@@ -37,9 +37,6 @@ httpx==0.25.2
 
 # Logging y monitoreo
 structlog==23.2.0
-
-# Validación de imágenes (opcional)
-python-magic==0.4.27
 
 # Cache opcional
 redis==5.0.1
